@@ -76,23 +76,23 @@ p/
 
 ### 首页
 
-<img src="README.assets/image-20260325153036558.png" alt="image-20260325153036558"  />
+![image-20260325160640437](README.assets/image-20260325160640437.png)
 
 ### 图片上传页面
 
-![image-20260325152008209](README.assets/image-20260325152008209.png)
+![image-20260325160654558](README.assets/image-20260325160654558.png)
 
 ### 图片批量抓取页面
 
-![image-20260325152026655](README.assets/image-20260325152026655.png)
+![image-20260325160703128](README.assets/image-20260325160703128.png)
 
 ### 图片管理页面
 
-![image-20260325152045176](README.assets/image-20260325152045176.png)
+![image-20260325160709046](README.assets/image-20260325160709046.png)
 
 ### 用户登录页面
 
-![image-20260325152104347](README.assets/image-20260325152104347.png)
+![image-20260325160716381](README.assets/image-20260325160716381.png)
 
 ## 快速开始
 
