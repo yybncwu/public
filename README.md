@@ -2,11 +2,12 @@
 
 ## 项目介绍
 
-图片资源聚合项目是一个前后端分离的Web应用，用于管理和分享图片资源。系统支持图片上传、管理、查看等功能，适用于个人或团队的图片资源管理需求。
+图片资源聚合项目是一个前后端分离的Web应用，用于管理和分享图片资源。系统支持图片上传、管理、查看、空间管理等功能，适用于个人或团队的图片资源管理需求。
 
 ## 技术栈
 
 ### 后端技术栈
+
 - Java 17
 - Spring Boot 2.7.6
 - MyBatis-Plus 3.5.9
@@ -15,6 +16,7 @@
 - Knife4j API文档
 
 ### 前端技术栈
+
 - Vue 3
 - TypeScript
 - Ant Design Vue 4.2.6
@@ -37,7 +39,8 @@ p/
 │   │   ├── exception/       # 异常处理
 │   │   ├── manager/         # 管理器
 │   │   ├── annotation/      # 注解
-│   │   └── aop/             # 切面
+│   │   ├── aop/             # 切面
+│   │   └── space/           # 空间模块
 │   ├── src/main/resources/  # 资源文件
 │   └── pom.xml              # Maven配置文件
 └── picture-frontend/        # 前端项目
@@ -71,32 +74,41 @@ p/
 - **设计模式**：运用模板方法设计模式统一封装本地图片和 URL 图片上传的流程，如校验、下载、上传和资源释放，复用代码并提高可维护性
 - **查询优化**：为提高主页热门图片的查询性能，采用 Redis + Caffeine 构建多级缓存，接口响应耗时降低 400%，并通过随机过期时间降低缓存雪崩风险
 - **加载优化**：利用数据万象，在上传前对大文件进行 Webp 转码压缩和缩略图生成，大幅提高页面加载速度并节约成本
+- **空间管理**：实现多级别空间管理，支持普通版、专业版、旗舰版三种空间级别，每个空间可设置不同的存储容量和图片数量限制
 
 ## 系统截图
 
 ### 首页
 
-![image-20260325160640437](README.assets/image-20260325160640437.png)
+![image-20260407210729286](README.assets/image-20260407210729286.png)
 
 ### 图片上传页面
 
-![image-20260325160654558](README.assets/image-20260325160654558.png)
+![image-20260407210813101](README.assets/image-20260407210813101.png)
 
 ### 图片详情页面
 
-![image-20260325171659445](README.assets/image-20260325171659445.png)
+![image-20260407210839607](README.assets/image-20260407210839607.png)
 
 ### 图片批量抓取页面
 
-![image-20260325160703128](README.assets/image-20260325160703128.png)
+![image-20260407210909473](README.assets/image-20260407210909473.png)
 
 ### 图片管理页面
 
-![image-20260325160709046](README.assets/image-20260325160709046.png)
+![image-20260407210940090](README.assets/image-20260407210940090.png)
 
 ### 用户登录页面
 
-![image-20260325160716381](README.assets/image-20260325160716381.png)
+![image-20260407211238888](README.assets/image-20260407211238888.png)
+
+### 空间管理页面
+
+![image-20260407211011666](README.assets/image-20260407211011666.png)
+
+### 私有空间页面
+
+![image-20260407211102196](README.assets/image-20260407211102196.png)
 
 ## 快速开始
 
@@ -107,17 +119,19 @@ p/
 2. 配置数据库
    - 创建数据库
    - 执行 `picture-backend/sql/create_table.sql` 创建表结构
+
 - 在 `picture-backend/src/main/resources/application.yml` 中配置MySQL相关参数
-  
+
 3. 配置腾讯云COS
-   
+
 - 在 `picture-backend/src/main/resources/application.yml` 中配置COS相关参数
-  
+
 4. 配置Redis
-   
+
 - 在 `picture-backend/src/main/resources/application.yml` 中配置Redis相关参数
-  
+
 5. 构建和运行
+
    ```bash
    cd picture-backend
    mvn clean package
@@ -127,21 +141,24 @@ p/
 ### 前端部署
 
 1. 安装依赖
+
    ```bash
    cd picture-frontend
    npm install
    ```
 
 2. 配置API地址
-   
+
 - 修改 `picture-frontend/src/request.ts` 中的API基础地址
-  
+
 3. 开发环境运行
+
    ```bash
    npm run dev
    ```
 
 4. 生产环境构建
+
    ```bash
    npm run build
    ```
