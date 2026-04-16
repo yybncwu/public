@@ -108,7 +108,15 @@ p/
 
 ### 私有空间页面
 
-![image-20260407211102196](README.assets/image-20260407211102196.png)
+![image-20260416171513964](README.assets/image-20260416171513964.png)
+
+### 颜色搜索
+
+![image-20260416171648731](README.assets/image-20260416171648731.png)
+
+### 快速分享
+
+![image-20260416171652802](README.assets/image-20260416171652802.png)
 
 ## 快速开始
 
